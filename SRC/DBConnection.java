@@ -1,15 +1,8 @@
 package ada.projectfinal;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
-
+import java.sql.*;
 public class DBConnection {
-
-    private static final String URL =
-        "jdbc:sqlserver://localhost:1433;databaseName=StudentPerformanceDB;encrypt=true;trustServerCertificate=true;integratedSecurity=true";
-
     public static Connection getConnection() throws SQLException {
-        return DriverManager.getConnection(URL);
+        String url = "jdbc:sqlserver://localhost:1433;databaseName=StudentPerformanceDB;encrypt=true;trustServerCertificate=true;integratedSecurity=true";
+        return DriverManager.getConnection(url);
     }
 }
